@@ -3,13 +3,13 @@ import './Coin.scss'
 
 const Coin = ({ image, name, symbol, price, volume, priceChange, marketcap }) => {
     return (
-        <div>
-            <div>
-                <img src={image} alt='crypto'/>
-                <h1>{name}</h1>
-                <p>{symbol}</p>
+        <div className="coin-container">
+            <div className="coin-name">
+                <img src={image} alt='crypto' className="coin-name__image"/>
+                <h2>{name}</h2>
+                {/* <p>{symbol}</p> */}
             </div>
-            <div>
+            <div className="coin-info">
                 <p>${price}</p>
                 <p>${volume.toLocaleString()}</p>
                 {priceChange < 0 ? (

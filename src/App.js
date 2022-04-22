@@ -8,9 +8,10 @@ function App() {
 
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
+  const Api = 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
   useEffect(() => {
-    axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false')
+    axios.get(Api)
     .then(res => {
       setCoins(res.data)
      }).catch(error => console.log(error))
@@ -26,10 +27,10 @@ function App() {
 
   return (
     <div className="coin-app">
-       <div>
-         <h1>Search a currency</h1>
-         <form>
-           <input type='text' placeholder='Search' onChange={handleChange}></input>
+       <div className='coin-app__header'>
+         <h1>Search for a currency</h1>
+         <form className='coin-app__form'>
+           <input type='text' placeholder='Search' onChange={handleChange} className='coin-app__form--input'/>
          </form>
        </div>
       {filteredCoins.map(coin => {

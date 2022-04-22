@@ -1,0 +1,27 @@
+.coin-container {
+    // background-color: red;
+    width: 60rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 2px 2px 10px #bdc1c6;
+    border-radius: 10px;
+}
+.coin-name {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    &__image {
+        height: 8rem;
+    }
+}
+
+.red {
+    color: red;
+}
+.green {
+    color: greenyellow;
+}
